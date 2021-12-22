@@ -1,0 +1,41 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: RESTful Boilerplate
+  description: Use this for quick spec
+
+servers:
+  - url: http://127.0.0.1:5000
+
+components:
+  securitySchemes :
+    bearerAuth:
+     type: http
+     scheme: bearer
+     bearerFormat: JWT
+
+paths:
+  /auth/register:
+    summary: create a new user
+    post:
+      tags:
+        - Auth
+      responses:
+        200:
+          description: success
+  /auth/token:
+    summary: request a token
+    post:
+      tags:
+        - Auth
+      responses:
+        200:
+          description: success
+  /auth/token/refresh:
+    summary: refresh a token
+    post:
+      tags:
+        - Auth
+      responses:
+        200:
+          description: success
